@@ -1,0 +1,28 @@
+import random
+
+def play_game():
+    # Get user's choice
+    user_choice = input("Choose 'r' for rock, 'p' for paper, or 's' for scissors: ")
+
+    # Get computer's choice
+    computer_choice = random.choice(['r', 'p', 's'])
+
+    # Print the choices
+    print(f"You chose {user_choice}")
+    print(f"The computer chose {computer_choice}")
+
+    # Determine the winner
+    if user_choice == computer_choice:
+        print("It's a tie!")
+    elif (user_choice == 'r' and computer_choice == 's') or \
+         (user_choice == 'p' and computer_choice == 'r') or \
+         (user_choice == 's' and computer_choice == 'p'):
+        print("You win!")
+    else:
+        print("The computer wins!")
+
+while True:
+    play_game()
+    play_again = input("Play again? (y/n): ")
+    if play_again.lower() != 'y':
+        break
